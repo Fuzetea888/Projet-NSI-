@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer Career - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            background: #fff;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-card h4 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>🚀 AI Engineer Career</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#paths">Career Paths</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <h2>Welcome to Your AI Engineering Journey</h2>
+        <p>Explore the exciting world of Artificial Intelligence and Machine Learning careers</p>
+        <a href="#paths" class="cta-button">Discover Career Paths</a>
+        <a href="#skills" class="cta-button secondary">Learn Required Skills</a>
+    </section>
+    
+    <div class="container">
+        <section class="section" id="about">
+            <h3>About AI Engineering</h3>
+            <p>Artificial Intelligence engineering is one of the most exciting and rapidly growing fields in technology today. AI engineers design, develop, and deploy intelligent systems that can learn from data, make decisions, and solve complex problems. From natural language processing to computer vision, from robotics to autonomous systems, AI engineers are at the forefront of technological innovation.</p>
+            <p style="margin-top: 1rem;">The field offers tremendous opportunities for innovation, impact, and growth. AI engineers work across various industries including healthcare, finance, technology, transportation, and more, creating solutions that improve lives and drive business value.</p>
+        </section>
+        
+        <section class="section" id="paths">
+            <h3>Popular Career Paths</h3>
+            <div class="features">
+                <div class="feature-card">
+                    <h4>🤖 Machine Learning Engineer</h4>
+                    <p>Design and implement ML algorithms, build predictive models, and optimize systems for production environments. Focus on data processing, model training, and performance optimization.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>👁️ Computer Vision Specialist</h4>
+                    <p>Develop systems that interpret and understand visual information from images and videos. Applications include facial recognition, medical imaging, autonomous vehicles, and more.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🗣️ NLP Engineer</h4>
+                    <p>Create systems that understand and process human language. Work on chatbots, machine translation, sentiment analysis, and text understanding applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🧠 Deep Learning Specialist</h4>
+                    <p>Specialize in neural networks and deep learning architectures. Work on cutting-edge problems using CNNs, RNNs, Transformers, and other advanced techniques.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📊 AI Research Scientist</h4>
+                    <p>Conduct research to advance the field of AI. Publish papers, develop novel algorithms, and explore new approaches to solve fundamental AI problems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔧 AI Infrastructure Engineer</h4>
+                    <p>Build and maintain the systems and infrastructure that support AI development. Focus on scaling, optimization, and deployment of ML models.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="skills">
+            <h3>Essential Skills for AI Engineers</h3>
+            <div class="features">
+                <div class="feature-card">
+                    <h4>Programming Languages</h4>
+                    <p>Python (most essential), Java, C++, JavaScript. Python is the industry standard for AI/ML development due to its rich ecosystem of libraries.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Mathematics & Statistics</h4>
+                    <p>Linear algebra, calculus, probability, and statistics. Essential for understanding algorithms, model optimization, and data analysis.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Machine Learning & AI</h4>
+                    <p>Deep learning frameworks (TensorFlow, PyTorch), supervised/unsupervised learning, reinforcement learning, and model evaluation techniques.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Data Science</h4>
+                    <p>Data preprocessing, feature engineering, data visualization, and analysis using tools like pandas, NumPy, and Matplotlib.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Software Engineering</h4>
+                    <p>Version control (Git), testing, debugging, API development, and software architecture. Essential for production-ready AI systems.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>Cloud & DevOps</h4>
+                    <p>AWS, Google Cloud, Azure, Docker, Kubernetes. Critical for deploying and scaling AI models in production environments.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h3>Learning Resources</h3>
+            <p><strong>Online Courses:</strong> Coursera, edX, Udacity, Andrew Ng's Machine Learning courses</p>
+            <p><strong>Books:</strong> "Deep Learning" by Goodfellow, "Hands-On Machine Learning" by Aurélien Géron, "Python Machine Learning" by Sebastian Raschka</p>
+            <p><strong>Platforms:</strong> Kaggle competitions, GitHub repositories, arXiv papers, Research blogs</p>
+            <p><strong>Practice:</strong> Build projects, contribute to open-source, participate in hackathons, create a portfolio on GitHub</p>
+        </section>
+        
+        <section class="section" id="contact">
+            <h3>Get Started Today</h3>
+            <p>Ready to start your AI engineering career? Here are the first steps:</p>
+            <ol style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>Learn Python:</strong> Master the programming language of AI/ML</li>
+                <li><strong>Study Mathematics:</strong> Build a strong foundation in linear algebra and calculus</li>
+                <li><strong>Take Online Courses:</strong> Enroll in comprehensive ML and AI courses</li>
+                <li><strong>Practice with Projects:</strong> Build real-world projects to apply your knowledge</li>
+                <li><strong>Join Communities:</strong> Connect with other AI engineers and stay updated</li>
+                <li><strong>Keep Learning:</strong> Stay current with the rapidly evolving field</li>
+            </ol>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 AI Engineer Career Guide. All rights reserved.</p>
+        <p>Last Updated: January 6, 2026</p>
+    </footer>
+</body>
+</html>
