@@ -3,335 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formations et Compétences</title>
+    <title>Formations - Ingénieur IA</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 20px;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
-
+        
         header {
-            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            margin-bottom: 50px;
+            padding: 40px 20px;
+            text-align: center;
         }
-
+        
         header h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-
+        
         header p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             opacity: 0.9;
         }
-
-        .content-wrapper {
+        
+        main {
+            padding: 40px;
+        }
+        
+        .formations-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .formation-card {
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 25px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
         }
-
-        .card:hover {
+        
+        .formation-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            background: white;
         }
-
-        .card h2 {
+        
+        .formation-card h3 {
             color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
-
-        .formation-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+        
+        .formation-card ul {
+            list-style: none;
+            margin: 15px 0;
         }
-
-        .formation-item:last-child {
+        
+        .formation-card li {
+            padding: 8px 0;
+            color: #333;
+            line-height: 1.6;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .formation-card li:last-child {
             border-bottom: none;
         }
-
-        .formation-item h3 {
+        
+        .duration {
             color: #764ba2;
-            margin-bottom: 5px;
-            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #667eea;
         }
-
-        .formation-item .institution {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .formation-item .date {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .formation-item p {
-            color: #555;
-            line-height: 1.5;
-        }
-
+        
         .skills-section {
+            background: #f0f4ff;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .skills-section h2 {
+            color: #667eea;
             margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
         }
-
-        .skills-section h3 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-
+        
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-
-        .skill-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: transform 0.2s ease;
+        
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
-        .skill-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .skill-level {
-            display: flex;
-            align-items: center;
+        
+        .skill-category h4 {
+            color: #764ba2;
             margin-bottom: 15px;
+            font-size: 1.2em;
         }
-
-        .skill-level .name {
-            flex: 1;
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
             color: #555;
-            font-weight: 500;
+            line-height: 1.6;
         }
-
-        .progress-bar {
-            flex: 2;
-            height: 8px;
-            background: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 0 15px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-        }
-
-        .percentage {
-            width: 40px;
-            text-align: right;
+        
+        .skill-category li:before {
+            content: "▸ ";
             color: #667eea;
-            font-weight: 600;
-            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 8px;
         }
-
+        
+        .requirement-section {
+            background: #fff3cd;
+            padding: 30px;
+            border-left: 4px solid #ffc107;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .requirement-section h2 {
+            color: #856404;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .requirement-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .requirement-section li {
+            padding: 10px 0;
+            color: #856404;
+            line-height: 1.8;
+        }
+        
+        .requirement-section li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
         @media (max-width: 768px) {
-            .content-wrapper {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            main {
+                padding: 20px;
+            }
+            
+            .formations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            }
-        }
-
-        footer {
-            text-align: center;
-            color: white;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 50px;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-link:hover {
-            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Formations et Compétences</h1>
-            <p>Mon parcours académique et mes domaines d'expertise</p>
+            <h1>Formations en Ingénierie IA</h1>
+            <p>Développez vos compétences pour devenir un expert en Intelligence Artificielle</p>
         </header>
-
-        <div class="content-wrapper">
-            <!-- Formations Section -->
-            <div class="card">
-                <h2>🎓 Formations</h2>
+        
+        <main>
+            <section class="requirement-section">
+                <h2>Prérequis Recommandés</h2>
+                <ul>
+                    <li>Connaissances solides en mathématiques (algèbre linéaire, calcul, statistiques)</li>
+                    <li>Expérience en programmation Python ou équivalent</li>
+                    <li>Compréhension des concepts de probabilités et statistiques</li>
+                    <li>Notions de base en structures de données et algorithmes</li>
+                    <li>Familiarité avec l'environnement Unix/Linux (optionnel mais recommandé)</li>
+                </ul>
+            </section>
+            
+            <h2 style="color: #667eea; text-align: center; margin-bottom: 30px; font-size: 2em;">Parcours de Formation</h2>
+            
+            <div class="formations-grid">
+                <div class="formation-card">
+                    <h3>Fondamentaux Python</h3>
+                    <ul>
+                        <li>Syntaxe et structure du langage Python</li>
+                        <li>Programmation orientée objet</li>
+                        <li>Gestion des fichiers et entrées/sorties</li>
+                        <li>Programmation fonctionnelle et décorateurs</li>
+                        <li>Bonnes pratiques et conventions de codage</li>
+                        <li>Gestion des dépendances avec pip et virtualenv</li>
+                    </ul>
+                    <div class="duration">Durée : 3 à 4 semaines</div>
+                </div>
                 
-                <div class="formation-item">
-                    <h3>Baccalauréat Scientifique</h3>
-                    <div class="institution">Lycée [Nom du lycée]</div>
-                    <div class="date">2024 - 2025</div>
-                    <p>Spécialités : Mathématiques, Physique-Chimie, Informatique (NSI)</p>
+                <div class="formation-card">
+                    <h3>Algèbre Linéaire et Calcul</h3>
+                    <ul>
+                        <li>Vecteurs et matrices</li>
+                        <li>Opérations matricielles et déterminants</li>
+                        <li>Valeurs et vecteurs propres</li>
+                        <li>Décomposition en valeurs singulières (SVD)</li>
+                        <li>Calcul différentiel et gradient</li>
+                        <li>Optimisation et méthodes de gradient</li>
+                    </ul>
+                    <div class="duration">Durée : 4 à 5 semaines</div>
                 </div>
-
-                <div class="formation-item">
-                    <h3>Formation en Informatique</h3>
-                    <div class="institution">Platforma de Formation</div>
-                    <div class="date">2023 - Présent</div>
-                    <p>Apprentissage des technologies web modernes et développement d'applications.</p>
+                
+                <div class="formation-card">
+                    <h3>Probabilités et Statistiques</h3>
+                    <ul>
+                        <li>Théorie des probabilités fondamentale</li>
+                        <li>Distributions probabilistes courantes</li>
+                        <li>Statistiques descriptives et inférentielles</li>
+                        <li>Tests d'hypothèse et intervalles de confiance</li>
+                        <li>Régression et corrélation</li>
+                        <li>Analyse de variance (ANOVA)</li>
+                    </ul>
+                    <div class="duration">Durée : 4 à 5 semaines</div>
                 </div>
-
-                <div class="formation-item">
-                    <h3>Cursus NSI</h3>
-                    <div class="institution">Option Informatique</div>
-                    <div class="date">2023 - 2025</div>
-                    <p>Spécialité Numérique et Sciences Informatiques couvrant algorithmique, programmation et bases de données.</p>
+                
+                <div class="formation-card">
+                    <h3>Bibliothèques de Données</h3>
+                    <ul>
+                        <li>NumPy pour le calcul numérique</li>
+                        <li>Pandas pour la manipulation de données</li>
+                        <li>Matplotlib et Seaborn pour la visualisation</li>
+                        <li>Traitement et nettoyage de données</li>
+                        <li>Exploration de données (EDA)</li>
+                        <li>Gestion de grandes bases de données</li>
+                    </ul>
+                    <div class="duration">Durée : 3 à 4 semaines</div>
+                </div>
+                
+                <div class="formation-card">
+                    <h3>Apprentissage Automatique</h3>
+                    <ul>
+                        <li>Concepts fondamentaux du machine learning</li>
+                        <li>Régression linéaire et logistique</li>
+                        <li>Arbres de décision et forêts aléatoires</li>
+                        <li>Machines à vecteurs de support (SVM)</li>
+                        <li>Validation croisée et évaluation des modèles</li>
+                        <li>Réglage des hyperparamètres</li>
+                    </ul>
+                    <div class="duration">Durée : 5 à 6 semaines</div>
+                </div>
+                
+                <div class="formation-card">
+                    <h3>Apprentissage Profond</h3>
+                    <ul>
+                        <li>Réseaux de neurones artificiels</li>
+                        <li>Perceptrons multicouches</li>
+                        <li>Rétropropagation et optimisation</li>
+                        <li>Réseaux de neurones convolutifs (CNN)</li>
+                        <li>Réseaux de neurones récurrents (RNN)</li>
+                        <li>Transfert d'apprentissage</li>
+                    </ul>
+                    <div class="duration">Durée : 6 à 8 semaines</div>
+                </div>
+                
+                <div class="formation-card">
+                    <h3>Traitement du Langage Naturel</h3>
+                    <ul>
+                        <li>Fondamentaux du NLP</li>
+                        <li>Tokenization et lemmatisation</li>
+                        <li>Word embeddings et word2vec</li>
+                        <li>Transformers et BERT</li>
+                        <li>Classification de texte</li>
+                        <li>Analyse de sentiments</li>
+                    </ul>
+                    <div class="duration">Durée : 4 à 6 semaines</div>
+                </div>
+                
+                <div class="formation-card">
+                    <h3>Vision par Ordinateur</h3>
+                    <ul>
+                        <li>Traitement d'images numériques</li>
+                        <li>Filtrage et détection de contours</li>
+                        <li>Réseaux convolutifs profonds</li>
+                        <li>Détection et segmentation d'objets</li>
+                        <li>Reconnaissance faciale</li>
+                        <li>Reconnaissance de caractères (OCR)</li>
+                    </ul>
+                    <div class="duration">Durée : 5 à 7 semaines</div>
+                </div>
+                
+                <div class="formation-card">
+                    <h3>Apprentissage par Renforcement</h3>
+                    <ul>
+                        <li>Processus de décision markoviens</li>
+                        <li>Q-learning et algorithmes de valeur</li>
+                        <li>Méthodes de gradient de politique</li>
+                        <li>Algorithmes acteur-critique</li>
+                        <li>Exploration et exploitation</li>
+                        <li>Applications pratiques</li>
+                    </ul>
+                    <div class="duration">Durée : 4 à 6 semaines</div>
                 </div>
             </div>
-
-            <!-- Compétences Section -->
-            <div class="card">
-                <h2>💡 Compétences Techniques</h2>
+            
+            <div class="skills-section">
+                <h2>Compétences Clés d'un Ingénieur IA</h2>
                 
-                <div class="skills-section">
-                    <h3>Langages de Programmation</h3>
-                    <div class="skills-grid">
-                        <div class="skill-badge">Python</div>
-                        <div class="skill-badge">JavaScript</div>
-                        <div class="skill-badge">HTML/CSS</div>
-                        <div class="skill-badge">SQL</div>
-                        <div class="skill-badge">PHP</div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Compétences Techniques</h4>
+                        <ul>
+                            <li>Python, Java, C++</li>
+                            <li>SQL et NoSQL</li>
+                            <li>TensorFlow et PyTorch</li>
+                            <li>Scikit-learn et XGBoost</li>
+                            <li>Git et contrôle de version</li>
+                            <li>Docker et conteneurisation</li>
+                            <li>Kubernetes pour l'orchestration</li>
+                            <li>Cloud computing (AWS, GCP, Azure)</li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="skills-section">
-                    <h3>Frameworks & Outils</h3>
-                    <div class="skills-grid">
-                        <div class="skill-badge">Git</div>
-                        <div class="skill-badge">GitHub</div>
-                        <div class="skill-badge">VS Code</div>
-                        <div class="skill-badge">MySQL</div>
-                        <div class="skill-badge">API REST</div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h3>Niveau de Compétence</h3>
                     
-                    <div class="skill-level">
-                        <div class="name">Python</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                        <div class="percentage">85%</div>
+                    <div class="skill-category">
+                        <h4>Compétences en Données</h4>
+                        <ul>
+                            <li>Ingénierie des données</li>
+                            <li>Extraction et transformation de données</li>
+                            <li>Nettoyage des données</li>
+                            <li>Normalisation et standardisation</li>
+                            <li>Gestion de données massives</li>
+                            <li>Analyse exploratoire des données</li>
+                            <li>Feature engineering</li>
+                            <li>Dimensionnalité réduction</li>
+                        </ul>
                     </div>
-
-                    <div class="skill-level">
-                        <div class="name">JavaScript</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%;"></div>
-                        </div>
-                        <div class="percentage">70%</div>
+                    
+                    <div class="skill-category">
+                        <h4>Compétences en Modélisation</h4>
+                        <ul>
+                            <li>Sélection de modèles appropriés</li>
+                            <li>Entraînement et validation</li>
+                            <li>Ajustement des hyperparamètres</li>
+                            <li>Évaluation des performances</li>
+                            <li>Gestion du surapprentissage</li>
+                            <li>Ensembles de modèles</li>
+                            <li>Reproduction et versioning</li>
+                            <li>Documenter les expériences</li>
+                        </ul>
                     </div>
-
-                    <div class="skill-level">
-                        <div class="name">HTML/CSS</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                        <div class="percentage">80%</div>
+                    
+                    <div class="skill-category">
+                        <h4>Compétences en Déploiement</h4>
+                        <ul>
+                            <li>Intégration continue/déploiement continu</li>
+                            <li>Conteneurisation des modèles</li>
+                            <li>APIs REST et microservices</li>
+                            <li>Monitoring et alertes</li>
+                            <li>Gestion de la dérive du modèle</li>
+                            <li>Scalabilité et performance</li>
+                            <li>Sécurité des modèles</li>
+                            <li>Maintenance en production</li>
+                        </ul>
                     </div>
-
-                    <div class="skill-level">
-                        <div class="name">Bases de Données</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 75%;"></div>
-                        </div>
-                        <div class="percentage">75%</div>
+                    
+                    <div class="skill-category">
+                        <h4>Soft Skills Essentiels</h4>
+                        <ul>
+                            <li>Communication technique claire</li>
+                            <li>Travail en équipe interdisciplinaire</li>
+                            <li>Résolution de problèmes analytique</li>
+                            <li>Pensée critique et créativité</li>
+                            <li>Gestion de projet agile</li>
+                            <li>Documentation efficace</li>
+                            <li>Leadership technique</li>
+                            <li>Apprentissage continu</li>
+                        </ul>
                     </div>
-
-                    <div class="skill-level">
-                        <div class="name">Algorithmique</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                        <div class="percentage">80%</div>
+                    
+                    <div class="skill-category">
+                        <h4>Domaines Spécialisés</h4>
+                        <ul>
+                            <li>Traitement du langage naturel</li>
+                            <li>Vision par ordinateur</li>
+                            <li>Recommandation de systèmes</li>
+                            <li>Prédiction de séries temporelles</li>
+                            <li>Anomalies détection</li>
+                            <li>Clustering et classification</li>
+                            <li>Apprentissage semi-supervisé</li>
+                            <li>Apprentissage fédéré</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Soft Skills Section -->
-        <div class="card">
-            <h2>🌟 Compétences Transversales</h2>
-            <div class="skills-grid" style="margin-bottom: 20px;">
-                <div class="skill-badge">Résolution de problèmes</div>
-                <div class="skill-badge">Travail en équipe</div>
-                <div class="skill-badge">Communication</div>
-                <div class="skill-badge">Créativité</div>
-                <div class="skill-badge">Gestion de projet</div>
-                <div class="skill-badge">Apprentissage rapide</div>
-                <div class="skill-badge">Rigueur</div>
-                <div class="skill-badge">Autonomie</div>
+            
+            <div class="requirement-section" style="background: #e7f3ff; border-left-color: #2196F3;">
+                <h2 style="color: #1976D2;">Objectifs de la Formation</h2>
+                <ul style="color: #1565C0;">
+                    <li>Maîtriser les fondamentaux mathématiques et statistiques nécessaires à l'IA</li>
+                    <li>Développer une expertise en programmation Python et en outils d'apprentissage automatique</li>
+                    <li>Concevoir, entraîner et déployer des modèles d'IA en production</li>
+                    <li>Comprendre et appliquer les meilleures pratiques d'ingénierie logicielle</li>
+                    <li>Collaborer efficacement dans une équipe multidisciplinaire</li>
+                    <li>Rester à jour avec les dernières avancées en IA et apprentissage automatique</li>
+                    <li>Résoudre des problèmes réels du monde avec des solutions basées sur l'IA</li>
+                    <li>Développer une éthique professionnelle et une responsabilité en IA</li>
+                </ul>
             </div>
-        </div>
-
+        </main>
+        
         <footer>
-            <p>&copy; 2025 - Tous droits réservés</p>
-            <nav>
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
+            <p>Formation Professionnelle en Ingénierie Artificielle</p>
+            <p>Développez votre carrière en tant qu'expert en Intelligence Artificielle</p>
+            <p>Contenu fourni dans le cadre du projet NSI - 2026</p>
         </footer>
     </div>
 </body>
