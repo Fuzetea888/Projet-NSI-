@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations et Compétences</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .formation-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .formation-item:last-child {
+            border-bottom: none;
+        }
+
+        .formation-item h3 {
+            color: #764ba2;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .formation-item .institution {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .formation-item .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .formation-item p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .skills-section {
+            margin-bottom: 30px;
+        }
+
+        .skills-section h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skill-level .name {
+            flex: 1;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            flex: 2;
+            height: 8px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        .percentage {
+            width: 40px;
+            text-align: right;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 50px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Formations et Compétences</h1>
+            <p>Mon parcours académique et mes domaines d'expertise</p>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Formations Section -->
+            <div class="card">
+                <h2>🎓 Formations</h2>
+                
+                <div class="formation-item">
+                    <h3>Baccalauréat Scientifique</h3>
+                    <div class="institution">Lycée [Nom du lycée]</div>
+                    <div class="date">2024 - 2025</div>
+                    <p>Spécialités : Mathématiques, Physique-Chimie, Informatique (NSI)</p>
+                </div>
+
+                <div class="formation-item">
+                    <h3>Formation en Informatique</h3>
+                    <div class="institution">Platforma de Formation</div>
+                    <div class="date">2023 - Présent</div>
+                    <p>Apprentissage des technologies web modernes et développement d'applications.</p>
+                </div>
+
+                <div class="formation-item">
+                    <h3>Cursus NSI</h3>
+                    <div class="institution">Option Informatique</div>
+                    <div class="date">2023 - 2025</div>
+                    <p>Spécialité Numérique et Sciences Informatiques couvrant algorithmique, programmation et bases de données.</p>
+                </div>
+            </div>
+
+            <!-- Compétences Section -->
+            <div class="card">
+                <h2>💡 Compétences Techniques</h2>
+                
+                <div class="skills-section">
+                    <h3>Langages de Programmation</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">Python</div>
+                        <div class="skill-badge">JavaScript</div>
+                        <div class="skill-badge">HTML/CSS</div>
+                        <div class="skill-badge">SQL</div>
+                        <div class="skill-badge">PHP</div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Frameworks & Outils</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">Git</div>
+                        <div class="skill-badge">GitHub</div>
+                        <div class="skill-badge">VS Code</div>
+                        <div class="skill-badge">MySQL</div>
+                        <div class="skill-badge">API REST</div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Niveau de Compétence</h3>
+                    
+                    <div class="skill-level">
+                        <div class="name">Python</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <div class="percentage">85%</div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="name">JavaScript</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                        <div class="percentage">70%</div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="name">HTML/CSS</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="percentage">80%</div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="name">Bases de Données</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                        <div class="percentage">75%</div>
+                    </div>
+
+                    <div class="skill-level">
+                        <div class="name">Algorithmique</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="percentage">80%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills Section -->
+        <div class="card">
+            <h2>🌟 Compétences Transversales</h2>
+            <div class="skills-grid" style="margin-bottom: 20px;">
+                <div class="skill-badge">Résolution de problèmes</div>
+                <div class="skill-badge">Travail en équipe</div>
+                <div class="skill-badge">Communication</div>
+                <div class="skill-badge">Créativité</div>
+                <div class="skill-badge">Gestion de projet</div>
+                <div class="skill-badge">Apprentissage rapide</div>
+                <div class="skill-badge">Rigueur</div>
+                <div class="skill-badge">Autonomie</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 - Tous droits réservés</p>
+            <nav>
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="formations.html" class="nav-link">Formations</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
