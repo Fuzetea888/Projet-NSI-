@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Engineer Career - Home</title>
+    <title>Ingenieur IA - Carriere et Guide Complet</title>
     <style>
         * {
             margin: 0;
@@ -15,281 +15,521 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: #f4f4f4;
         }
         
         header {
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
         
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        nav h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
+            background-color: #333;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         nav a {
-            color: #fff;
+            display: block;
+            color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
+            padding: 15px 20px;
+            transition: background-color 0.3s;
         }
         
         nav a:hover {
-            color: #667eea;
+            background-color: #667eea;
         }
         
-        .hero {
+        main {
             max-width: 1200px;
-            margin: 4rem auto 0;
-            padding: 0 2rem;
-            text-align: center;
-            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
         }
         
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #667eea;
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin: 0.5rem;
-        }
-        
-        .cta-button:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            background: #fff;
-            padding: 3rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h3 {
-            font-size: 2rem;
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-card {
-            background: #f8f9fa;
-            padding: 2rem;
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
         
-        .feature-card h4 {
+        h3 {
             color: #764ba2;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
         }
         
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #e8eaf6;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
         
         footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
+            background-color: #333;
+            color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 20px;
+            margin-top: 40px;
         }
         
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            display: block;
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <h1>🚀 AI Engineer Career</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#paths">Career Paths</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Ingenieur en Intelligence Artificielle</h1>
+        <p>Un guide complet pour comprendre cette carriere passionnante</p>
     </header>
     
-    <section class="hero" id="home">
-        <h2>Welcome to Your AI Engineering Journey</h2>
-        <p>Explore the exciting world of Artificial Intelligence and Machine Learning careers</p>
-        <a href="#paths" class="cta-button">Discover Career Paths</a>
-        <a href="#skills" class="cta-button secondary">Learn Required Skills</a>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#definition">Qu'est-ce qu'un IA?</a></li>
+            <li><a href="#types">Types d'ingenieurs</a></li>
+            <li><a href="#missions">Missions principales</a></li>
+            <li><a href="#competences">Competences requises</a></li>
+            <li><a href="#salaires">Salaires</a></li>
+            <li><a href="#debuter">Comment debuter</a></li>
+            <li><a href="#ressources">Ressources d'apprentissage</a></li>
+        </ul>
+    </nav>
     
-    <div class="container">
-        <section class="section" id="about">
-            <h3>About AI Engineering</h3>
-            <p>Artificial Intelligence engineering is one of the most exciting and rapidly growing fields in technology today. AI engineers design, develop, and deploy intelligent systems that can learn from data, make decisions, and solve complex problems. From natural language processing to computer vision, from robotics to autonomous systems, AI engineers are at the forefront of technological innovation.</p>
-            <p style="margin-top: 1rem;">The field offers tremendous opportunities for innovation, impact, and growth. AI engineers work across various industries including healthcare, finance, technology, transportation, and more, creating solutions that improve lives and drive business value.</p>
+    <main>
+        <section id="definition">
+            <h2>Qu'est-ce qu'un Ingenieur IA?</h2>
+            <p>Un ingenieur en intelligence artificielle (IA) est un professionnel specialise dans la conception, le developpement et le deploiement de systemes d'intelligence artificielle. Ces ingenieurs combinent des competences en informatique, en mathematiques et en science des donnees pour creer des solutions intelligentes qui peuvent apprendre et s'adapter.</p>
+            
+            <div class="highlight">
+                <h3>Definition formelle</h3>
+                <p>Un ingenieur IA est un expert technique qui travaille sur la creation d'algorithmes et de modeles d'apprentissage automatique, leur integration dans des applications reelles, et leur optimisation pour des performances optimales en production.</p>
+            </div>
+            
+            <h3>Pourquoi cette carriere est importante</h3>
+            <p>L'intelligence artificielle transforme pratiquement tous les secteurs: la sante, le transport, la finance, l'education et bien d'autres. Les ingenieurs IA sont au coeur de cette revolution technologique, creant les solutions qui changeront notre avenir.</p>
         </section>
         
-        <section class="section" id="paths">
-            <h3>Popular Career Paths</h3>
-            <div class="features">
-                <div class="feature-card">
-                    <h4>🤖 Machine Learning Engineer</h4>
-                    <p>Design and implement ML algorithms, build predictive models, and optimize systems for production environments. Focus on data processing, model training, and performance optimization.</p>
+        <section id="types">
+            <h2>Types d'Ingenieurs IA</h2>
+            <p>Il existe plusieurs specialisations dans le domaine de l'IA. Voici les principales:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>Ingenieur Machine Learning</h4>
+                    <p>Se concentre sur la creation d'algorithmes d'apprentissage automatique, l'optimisation des modeles et leur mise en production. Travaille avec des donnees pour entrainer les systemes.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>👁️ Computer Vision Specialist</h4>
-                    <p>Develop systems that interpret and understand visual information from images and videos. Applications include facial recognition, medical imaging, autonomous vehicles, and more.</p>
+                <div class="card">
+                    <h4>Ingenieur Deep Learning</h4>
+                    <p>Specialiste des reseaux de neurones artificiels profonds. Travaille sur des problemes complexes comme la reconnaissance d'images, la traduction automatique et le traitement du langage naturel.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>🗣️ NLP Engineer</h4>
-                    <p>Create systems that understand and process human language. Work on chatbots, machine translation, sentiment analysis, and text understanding applications.</p>
+                <div class="card">
+                    <h4>Ingenieur NLP</h4>
+                    <p>Specialise dans le Traitement du Langage Naturel (Natural Language Processing). Creer des systemes qui comprennent et generent du texte humain.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>🧠 Deep Learning Specialist</h4>
-                    <p>Specialize in neural networks and deep learning architectures. Work on cutting-edge problems using CNNs, RNNs, Transformers, and other advanced techniques.</p>
+                <div class="card">
+                    <h4>Ingenieur Vision par Ordinateur</h4>
+                    <p>Travaille sur l'analyse et l'interpretation des images et videos. Applications: reconnaissance faciale, diagnostic medical par images, voitures autonomes.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>📊 AI Research Scientist</h4>
-                    <p>Conduct research to advance the field of AI. Publish papers, develop novel algorithms, and explore new approaches to solve fundamental AI problems.</p>
+                <div class="card">
+                    <h4>Ingenieur Robotique IA</h4>
+                    <p>Combine l'IA avec la robotique pour creer des robots intelligents. Applications: automatisation industrielle, robots collaboratifs, systemes autonomes.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>🔧 AI Infrastructure Engineer</h4>
-                    <p>Build and maintain the systems and infrastructure that support AI development. Focus on scaling, optimization, and deployment of ML models.</p>
+                <div class="card">
+                    <h4>Ingenieur MLOps</h4>
+                    <p>Se concentre sur l'infrastructure, le deploiement et la maintenance des modeles IA en production. Bridge entre les chercheurs et l'infrastructure informatique.</p>
                 </div>
             </div>
         </section>
         
-        <section class="section" id="skills">
-            <h3>Essential Skills for AI Engineers</h3>
-            <div class="features">
-                <div class="feature-card">
-                    <h4>Programming Languages</h4>
-                    <p>Python (most essential), Java, C++, JavaScript. Python is the industry standard for AI/ML development due to its rich ecosystem of libraries.</p>
+        <section id="missions">
+            <h2>Missions Principales</h2>
+            
+            <h3>1. Conception et Developpement</h3>
+            <ul>
+                <li>Analyser les problemes et determiner si l'IA est la solution appropriee</li>
+                <li>Concevoir l'architecture des systemes d'IA</li>
+                <li>Developper des modeles d'apprentissage automatique</li>
+                <li>Ecrire du code optimise et maintenable</li>
+            </ul>
+            
+            <h3>2. Traitement et Analyse des Donnees</h3>
+            <ul>
+                <li>Collecter et nettoyer les donnees</li>
+                <li>Analyser les caracteristiques des donnees</li>
+                <li>Preparer les donnees pour l'entrainement</li>
+                <li>Evaluer la qualite des donnees</li>
+            </ul>
+            
+            <h3>3. Entrainement et Optimisation</h3>
+            <ul>
+                <li>Entrainer les modeles sur des ensembles de donnees</li>
+                <li>Ajuster les hyperparametres pour ameliorer les performances</li>
+                <li>Evaluer les modeles avec diverses metriques</li>
+                <li>Eviter le surapprentissage et l'insuffisant apprentissage</li>
+            </ul>
+            
+            <h3>4. Deploiement en Production</h3>
+            <ul>
+                <li>Deployer les modeles dans des environnements de production</li>
+                <li>Garantir la scalabilite et la performance</li>
+                <li>Monitorer les modeles pour detecter les derives</li>
+                <li>Maintenir et mettre a jour les systemes</li>
+            </ul>
+            
+            <h3>5. Collaboration et Communication</h3>
+            <ul>
+                <li>Travailler avec des equipes pluridisciplinaires (data scientists, ingenieurs logiciels, product managers)</li>
+                <li>Documenter le code et les modeles</li>
+                <li>Communiquer les resultats aux parties prenantes non techniques</li>
+                <li>Participer aux revues de code et aux evaluations techniques</li>
+            </ul>
+        </section>
+        
+        <section id="competences">
+            <h2>Competences Requises</h2>
+            
+            <h3>Competences Techniques</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Langages de programmation</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Python (essentiel)</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>JavaScript/TypeScript</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>Mathematics & Statistics</h4>
-                    <p>Linear algebra, calculus, probability, and statistics. Essential for understanding algorithms, model optimization, and data analysis.</p>
+                <div class="card">
+                    <h4>Frameworks et Bibliotheques</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Scikit-learn</li>
+                        <li>Keras</li>
+                        <li>XGBoost</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>Machine Learning & AI</h4>
-                    <p>Deep learning frameworks (TensorFlow, PyTorch), supervised/unsupervised learning, reinforcement learning, and model evaluation techniques.</p>
+                <div class="card">
+                    <h4>Mathematiques et Statistiques</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Algebre lineaire</li>
+                        <li>Calcul differentiel</li>
+                        <li>Probabilites</li>
+                        <li>Statistiques</li>
+                        <li>Optimisation</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card">
-                    <h4>Data Science</h4>
-                    <p>Data preprocessing, feature engineering, data visualization, and analysis using tools like pandas, NumPy, and Matplotlib.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h4>Software Engineering</h4>
-                    <p>Version control (Git), testing, debugging, API development, and software architecture. Essential for production-ready AI systems.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h4>Cloud & DevOps</h4>
-                    <p>AWS, Google Cloud, Azure, Docker, Kubernetes. Critical for deploying and scaling AI models in production environments.</p>
+                <div class="card">
+                    <h4>Outils et Technologies</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Git et gestion de versions</li>
+                        <li>Docker et containerization</li>
+                        <li>Kubernetes</li>
+                        <li>SQL et bases de donnees</li>
+                        <li>Cloud (AWS, GCP, Azure)</li>
+                    </ul>
                 </div>
             </div>
+            
+            <h3>Competences non Techniques</h3>
+            <ul>
+                <li><strong>Resolution de problemes:</strong> Capacite a decomposer les problemes complexes en solutions realisables</li>
+                <li><strong>Apprentissage continu:</strong> Le domaine evolue rapidement; il faut rester a jour avec les dernieres avancees</li>
+                <li><strong>Communication:</strong> Expliquer les concepts techniques aux non-specialistes</li>
+                <li><strong>Travail en equipe:</strong> Collaborer efficacement avec d'autres specialistes</li>
+                <li><strong>Pensee critique:</strong> Evaluer les solutions et identifier les limitations</li>
+                <li><strong>Gestion de projets:</strong> Planifier et executer les projets selon les delais</li>
+            </ul>
         </section>
         
-        <section class="section">
-            <h3>Learning Resources</h3>
-            <p><strong>Online Courses:</strong> Coursera, edX, Udacity, Andrew Ng's Machine Learning courses</p>
-            <p><strong>Books:</strong> "Deep Learning" by Goodfellow, "Hands-On Machine Learning" by Aurélien Géron, "Python Machine Learning" by Sebastian Raschka</p>
-            <p><strong>Platforms:</strong> Kaggle competitions, GitHub repositories, arXiv papers, Research blogs</p>
-            <p><strong>Practice:</strong> Build projects, contribute to open-source, participate in hackathons, create a portfolio on GitHub</p>
+        <section id="salaires">
+            <h2>Salaires et Perspectives de Carriere</h2>
+            
+            <h3>Salaires en France</h3>
+            <p>Les salaires des ingenieurs IA varient selon l'experience, la localisation et la specialisation. Voici une estimation:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Niveau d'Experience</th>
+                        <th>Salaire Annuel Brut</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Junior (0-2 ans)</td>
+                        <td>30 000 - 45 000 EUR</td>
+                        <td>Debut de carriere, travail sur des projets guides</td>
+                    </tr>
+                    <tr>
+                        <td>Confirme (2-5 ans)</td>
+                        <td>45 000 - 65 000 EUR</td>
+                        <td>Independance accrue, leadership de petits projets</td>
+                    </tr>
+                    <tr>
+                        <td>Senior (5-10 ans)</td>
+                        <td>65 000 - 90 000 EUR</td>
+                        <td>Expert technique, architecture de systemes complexes</td>
+                    </tr>
+                    <tr>
+                        <td>Lead/Manager (10+ ans)</td>
+                        <td>90 000 - 150 000+ EUR</td>
+                        <td>Direction d'equipes, decisions strategiques</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Facteurs influencant le salaire</h3>
+            <ul>
+                <li>Localisation (Ile-de-France offre des salaires plus eleves)</li>
+                <li>Type d'entreprise (startups vs grandes entreprises)</li>
+                <li>Specialisation et competences rares</li>
+                <li>Resultats et impact des projets</li>
+                <li>Niveau de scolarite (Master/Doctorat)</li>
+            </ul>
+            
+            <h3>Perspectives d'evolution</h3>
+            <ul>
+                <li>Chef de projet IA</li>
+                <li>Architecte systemes IA</li>
+                <li>Directeur technique (CTO)</li>
+                <li>Consultant en IA</li>
+                <li>Entrepreneur (creation de startup)</li>
+            </ul>
         </section>
         
-        <section class="section" id="contact">
-            <h3>Get Started Today</h3>
-            <p>Ready to start your AI engineering career? Here are the first steps:</p>
-            <ol style="margin-left: 2rem; margin-top: 1rem;">
-                <li><strong>Learn Python:</strong> Master the programming language of AI/ML</li>
-                <li><strong>Study Mathematics:</strong> Build a strong foundation in linear algebra and calculus</li>
-                <li><strong>Take Online Courses:</strong> Enroll in comprehensive ML and AI courses</li>
-                <li><strong>Practice with Projects:</strong> Build real-world projects to apply your knowledge</li>
-                <li><strong>Join Communities:</strong> Connect with other AI engineers and stay updated</li>
-                <li><strong>Keep Learning:</strong> Stay current with the rapidly evolving field</li>
+        <section id="debuter">
+            <h2>Comment Debuter en tant qu'Ingenieur IA</h2>
+            
+            <h3>Etape 1: Formation academique</h3>
+            <ul>
+                <li>Baccalaureat scientifique ou equivalent</li>
+                <li>Licence en Informatique, Mathematiques ou disciplines connexes</li>
+                <li>Master specialise en IA, Machine Learning ou Data Science (recommande mais pas toujours obligatoire)</li>
+            </ul>
+            
+            <h3>Etape 2: Competences fondamentales</h3>
+            <ol>
+                <li>Maitriser Python (commencement par la syntaxe, puis les bibliotheques)</li>
+                <li>Apprendre les bases des mathematiques (algebre, calcul, probabilites)</li>
+                <li>Comprendre les concepts du machine learning (algorithmes, validation, evaluation)</li>
+                <li>Pratiquer sur des projets reels</li>
             </ol>
+            
+            <h3>Etape 3: Construire un portfolio</h3>
+            <ul>
+                <li>Creer des projets personnels et les publier sur GitHub</li>
+                <li>Participer a des competitions de data science (Kaggle)</li>
+                <li>Contribuer a des projets open source</li>
+                <li>Creer un blog ou des articles sur vos apprentissages</li>
+            </ul>
+            
+            <h3>Etape 4: Gain d'experience</h3>
+            <ul>
+                <li>Stages en entreprises specialisees en IA</li>
+                <li>Projets freelance ou consulting</li>
+                <li>Emplois d'entree de gamme (Data Analyst, Junior ML Engineer)</li>
+                <li>Mentorat et reseau professionnel</li>
+            </ul>
         </section>
-    </div>
+        
+        <section id="ressources">
+            <h2>Ressources d'Apprentissage</h2>
+            
+            <h3>Cours en ligne gratuits</h3>
+            <ul>
+                <li><strong>Coursera:</strong> Cours de Machine Learning par Andrew Ng, specialisations en IA</li>
+                <li><strong>edX:</strong> Programmes MIT et Berkeley en informatique et IA</li>
+                <li><strong>Fast.ai:</strong> Apprentissage pratique du deep learning</li>
+                <li><strong>Udacity:</strong> Nanodegrees en machine learning et IA</li>
+                <li><strong>YouTube:</strong> Canaux comme 3Blue1Brown pour les mathematiques et StatQuest pour les statistiques</li>
+            </ul>
+            
+            <h3>Documentation officielle</h3>
+            <ul>
+                <li><strong>TensorFlow:</strong> tensorflow.org - documentation et tutoriels</li>
+                <li><strong>PyTorch:</strong> pytorch.org - guides et exemples</li>
+                <li><strong>Scikit-learn:</strong> scikit-learn.org - documentation detaillee</li>
+                <li><strong>NumPy et Pandas:</strong> Essentiels pour la manipulation de donnees</li>
+            </ul>
+            
+            <h3>Livres recommandes</h3>
+            <ul>
+                <li>"Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" par Aurelien Geron</li>
+                <li>"Deep Learning" par Goodfellow, Bengio et Courville</li>
+                <li>"Pattern Recognition and Machine Learning" par Christopher Bishop</li>
+                <li>"Introduction to Statistical Learning" (ISLR)</li>
+                <li>"Python pour la science des donnees" par Wes McKinney</li>
+            </ul>
+            
+            <h3>Communautes et forums</h3>
+            <ul>
+                <li><strong>Stack Overflow:</strong> Pour les questions techniques en programmation</li>
+                <li><strong>Reddit:</strong> Subreddits r/MachineLearning, r/learnmachinelearning, r/LanguageTechnology</li>
+                <li><strong>Kaggle:</strong> Competitions, datasets, et notebooks pour pratiquer</li>
+                <li><strong>GitHub:</strong> Code, projets open source, et collaboration</li>
+                <li><strong>Meetups et conferences:</strong> PyParis, NeurIPS, ICML, CVPR</li>
+            </ul>
+            
+            <h3>Specialisations avancees</h3>
+            <ul>
+                <li><strong>NLP:</strong> Hugging Face, NLTK, spaCy</li>
+                <li><strong>Vision par ordinateur:</strong> OpenCV, MMDetection</li>
+                <li><strong>Reinforcement Learning:</strong> OpenAI Gym, RLlib</li>
+                <li><strong>MLOps:</strong> MLflow, Kubeflow, DVC</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Conclusion</h2>
+            <p>La carriere d'ingenieur IA est extremement gratifiante et offre des opportunites sans fin. Le domaine est en croissance constante avec une demande toujours accrue de professionnels qualifies. Si vous etes passionne par l'informatique, les mathematiques et la resolution de problemes complexes, c'est une carriere a considerer serieusement.</p>
+            
+            <div class="highlight">
+                <p><strong>N'oubliez pas:</strong> La cle du succes est la pratique constante, l'apprentissage continu et la passion pour l'innovation. Commencez petit, construisez des projets, et evoluez progressivement vers des defis plus complexes. Le monde de l'IA vous attend!</p>
+            </div>
+        </section>
+    </main>
     
     <footer>
-        <p>&copy; 2026 AI Engineer Career Guide. All rights reserved.</p>
-        <p>Last Updated: January 6, 2026</p>
+        <p>&copy; 2026 Guide Complet sur les Ingenieurs IA. Tous droits reserves.</p>
+        <p>Derniere mise a jour: 6 janvier 2026</p>
     </footer>
+    
+    <div class="back-to-top" onclick="scrollToTop()">Haut</div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
